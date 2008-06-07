@@ -660,7 +660,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.1</version>
                 <configuration>
-                    <configLocation>file:///C:/Users/anders.smestad.BOUVET/Documents/fresh/maven/build-tools/src/main/resources/tvedere/checkstyle.xml</configLocation>
+                    <configLocation>src/main/resources/checkstyle.xml</configLocation>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <includes>**/*.java</includes>
@@ -698,6 +698,7 @@
                 </executions>
             </plugin-->
         </plugins>
+        <!-- TODO : need to make a maven extension plugin thing that contains checkstyle config...  -->
         <!--extensions>
             <extension>
                 <groupId>no.tst-solutions.maven</groupId>
@@ -739,15 +740,15 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>2.4.3</version>
             </plugin>
-            <plugin>
+            <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <configuration>
-                    <configLocation>tvedere/checkstyle.xml</configLocation>
+                    <configLocation>checkstyle.xml</configLocation>
                     <includes>**/*.java</includes>
                     <excludes>target/**/*.java</excludes>
                 </configuration>
-            </plugin>
+            </plugin-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>changelog-maven-plugin</artifactId>
