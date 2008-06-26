@@ -80,6 +80,7 @@
             <list>
                 <value>no.tstsolutions.tvedere.domain.persistent.PersistentObject</value>
                 <value>no.tstsolutions.tvedere.domain.persistent.DataObject</value>
+                <value>no.tstsolutions.tvedere.domain.persistent.Brand</value>
                 <value>no.tstsolutions.tvedere.domain.persistent.Variation</value>
                 <value>no.tstsolutions.tvedere.domain.persistent.VariationType</value>
                 <value>no.tstsolutions.tvedere.domain.persistent.Product</value>

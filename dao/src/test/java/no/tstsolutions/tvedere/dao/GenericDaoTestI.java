@@ -1,5 +1,7 @@
 package no.tstsolutions.tvedere.dao;
 
+import no.tstsolutions.tvedere.domain.persistent.Brand;
+import no.tstsolutions.tvedere.domain.persistent.Product;
 import no.tstsolutions.tvedere.domain.persistent.Variation;
 import org.junit.Test;
 import static org.junit.Assert.assertNotNull;
@@ -42,5 +44,26 @@ public class GenericDaoTestI extends AbstractTransactionalJUnit4SpringContextTes
         Variation v = new Variation();
         genericDao.save(v);
         assertNotNull("Expecting id set after saving", v.getId());
+    }
+    
+    @Test 
+    public void testProduct() {
+        Brand b = newBrand("TestBrand");
+        Product p = newProduct(b);
+        assertNotNull(p.getId());
+    }
+    
+    private Product newProduct(Brand b) {
+        Product p = new Product();
+        p.setBrand(b);
+        genericDao.save(p);
+        return p;
+    }
+    
+    private Brand newBrand(String name) {
+        Brand b = new Brand();
+        b.setName(name);
+        genericDao.save(b);
+        return b;
     }
 }
