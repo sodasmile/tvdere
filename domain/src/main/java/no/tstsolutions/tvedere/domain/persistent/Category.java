@@ -1,15 +1,19 @@
 package no.tstsolutions.tvedere.domain.persistent;
 
 import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  * Represents a product category
  * @author asm
  */
+@Entity
 public class Category extends PersistentObject {
 
     private Boolean online;
     private Category parentCategory;
+    @OneToMany
     private Set<Product> products;
 
     public Boolean getOnline() {

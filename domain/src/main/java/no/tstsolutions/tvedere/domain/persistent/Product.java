@@ -1,6 +1,10 @@
 package no.tstsolutions.tvedere.domain.persistent;
 
 import java.util.Set;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import no.tstsolutions.tvedere.domain.value.Amount;
 import no.tstsolutions.tvedere.domain.value.PackageSize;
 import no.tstsolutions.tvedere.domain.value.Weight;
@@ -9,19 +13,29 @@ import no.tstsolutions.tvedere.domain.value.Weight;
  * Persistent domain class for the Product entity
  * @author anders.smestad
  */
+@Entity
 public class Product extends PersistentObject {
 
+    @Embedded
     private Amount price;
+    @ManyToMany
     private Set<Image> images;
     private Integer inventoryCount;
     private String productNumber;
     private Boolean online;
     private String shortDescription;
     private String longDescription;
+    @Embedded
     private Weight weight;
+    @Embedded
     private PackageSize packageSize;
     private Brand brand;
-    private Set<Product> variations;
+    /**
+     * Set of child products that are variations of this main product. This is <code>null</null> if this product is a variation.
+     * For a product variation this.parent.productVariations.contains(this) == true
+     */
+    @OneToMany
+    private Set<ProductVariation> productVariations;
 
     public Brand getBrand() {
         return brand;
@@ -87,20 +101,20 @@ public class Product extends PersistentObject {
         this.productNumber = productNumber;
     }
 
+    public Set<ProductVariation> getProductVariations() {
+        return productVariations;
+    }
+
+    public void setProductVariations(Set<ProductVariation> productVariations) {
+        this.productVariations = productVariations;
+    }
+
     public String getShortDescription() {
         return shortDescription;
     }
 
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
-    }
-
-    public Set<Product> getVariations() {
-        return variations;
-    }
-
-    public void setVariations(Set<Product> variations) {
-        this.variations = variations;
     }
 
     public Weight getWeight() {

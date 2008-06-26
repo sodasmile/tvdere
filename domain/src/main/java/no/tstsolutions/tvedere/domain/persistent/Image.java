@@ -1,9 +1,12 @@
 package no.tstsolutions.tvedere.domain.persistent;
 
+import javax.persistence.Entity;
+
 /**
  * Representing an image
  * @author asm
  */
+@Entity
 public abstract class Image extends DataObject {
     
     private String caption;

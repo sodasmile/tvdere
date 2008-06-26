@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+   <appender name="testlog" class="org.apache.log4j.RollingFileAppender">
+     <param name="File" value="target/test.log"/>
+     <param name="Append" value="true"/>
+     <param name="MaxFileSize" value="10000KB"/>
+     <param name="MaxBackupIndex" value="5"/>
+     <layout class="org.apache.log4j.PatternLayout">
+       <param name="ConversionPattern" value="%d{DATE} %-5p %c{1}.%M(): %m%n"/>
+     </layout>
+   </appender>
+   <category name="org.apache">
+     <level value="warn"/>
+   </category>
+   <category name="org.hibernate">
+     <level value="warn"/>
+   </category>
+   <category name="net.sf.ehcache">
+     <level value="warn"/>
+   </category>
+   <category name="org.springframework">
+     <level value="warn"/>
+   </category>
+   <category name="no">
+     <level value="debug"/>
+   </category>
+   <category name="no.tstsolutions.tvedere.dao">
+     <level value="trace"/>
+   </category>
+   <root>
+     <level value="warn"/>
+     <appender-ref ref="testlog"/>
+   </root>
+</log4j:configuration>

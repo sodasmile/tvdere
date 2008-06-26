@@ -1,10 +1,13 @@
 package no.tstsolutions.tvedere.domain.persistent;
 
+import javax.persistence.Entity;
+
 /**
  * Abstract class with common properties for data objects to 
  * be persisted.
  * @author asm
  */
+@Entity
 public abstract class DataObject extends PersistentObject {
 
     // TODO: Is this a good way to represent data??

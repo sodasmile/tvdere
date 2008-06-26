@@ -1,9 +1,12 @@
 package no.tstsolutions.tvedere.domain.persistent;
 
+import javax.persistence.Entity;
+
 /**
  * Represents a persistent Jpeg image
  * @author asm
  */
+@Entity
 public class JpegImage extends Image {
     
     private static final String MIME_TYPE = "image/jpeg";
