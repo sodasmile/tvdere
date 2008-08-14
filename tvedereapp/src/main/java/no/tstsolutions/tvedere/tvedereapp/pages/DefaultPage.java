@@ -6,4 +6,6 @@ package no.tstsolutions.tvedere.tvedereapp.pages;
  */
 public class DefaultPage extends BasePage {
 
+    private static final long serialVersionUID = 2L;
+    
 }
