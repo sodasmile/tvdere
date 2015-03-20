@@ -188,7 +188,6 @@
                             <container>
                                 <containerId>tomcat5x</containerId>
                                 <zipUrlInstaller>
-                                    <url>http://beaver.bouvet.no/apache-tomcat-6.0.14.zip</url>
                                     <installDir>${project.build.directory}/tomcat</installDir>
                                 </zipUrlInstaller>
                             </container>

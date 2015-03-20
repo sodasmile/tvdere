@@ -7,18 +7,6 @@
     <packaging>pom</packaging>
     <name>TST Solutions Tvedere</name>
     <url>http://code.google.com/tvedere</url>
-    <developers>
-        <developer>
-            <id>asm</id>
-            <name>Anders Smestad</name>
-            <email>anders.smestad@bouvet.no</email>
-            <organization>Bouvet ASA</organization>
-            <organizationUrl>http://www.bouvet.no/</organizationUrl>
-            <roles>
-                <role>Developer</role>
-            </roles>
-        </developer>
-    </developers>
     <ciManagement>
         <system>continuum</system>
         <url>http://unknown.tst-solutions.com/continuum</url>
@@ -29,9 +17,6 @@
                 <sendOnFailure>true</sendOnFailure>
                 <sendOnWarning>true</sendOnWarning>
                 <sendOnSuccess>true</sendOnSuccess>
-                <configuration>
-                    <address>anders.smestad@tst.no</address>
-                </configuration>
             </notifier>
         </notifiers>
     </ciManagement>
@@ -494,33 +479,18 @@
             <properties>
                 <tvedere.database.host>localhost</tvedere.database.host>
                 <tvedere.tomcat.manager.url>http://localhost:8180/manager</tvedere.tomcat.manager.url>
-                <tvedere.tomcat.username>admin</tvedere.tomcat.username>
-                <tvedere.tomcat.password>bouvet01</tvedere.tomcat.password>
-                <printer.packingslip>packingSlipPrinter</printer.packingslip>
-                <printer.enabled>false</printer.enabled>
                 <printer.charset>8859_4</printer.charset>
             </properties>
         </profile>
         <profile>
             <id>devInternal</id>
             <properties>
-                <tvedere.database.host>10.4.40.208</tvedere.database.host>
-                <tvedere.tomcat.manager.url>http://beaver.bouvet.no:8180/manager</tvedere.tomcat.manager.url>
-                <tvedere.tomcat.username>admin</tvedere.tomcat.username>
-                <tvedere.tomcat.password>bouvet01</tvedere.tomcat.password>
-                <printer.packingslip>packingSlipPrinter</printer.packingslip>
-                <printer.enabled>false</printer.enabled>
                 <printer.charset>8859_4</printer.charset>
             </properties>
         </profile>
         <profile>
             <id>testInternal</id>
             <properties>
-                <tvedere.database.host>10.4.40.209</tvedere.database.host>
-                <tvedere.tomcat.manager.url>http://badger.bouvet.no:8180/manager</tvedere.tomcat.manager.url>
-                <tvedere.tomcat.username>admin</tvedere.tomcat.username>
-                <tvedere.tomcat.password>bouvet01</tvedere.tomcat.password>
-                <printer.packingslip>packingSlipPrinter</printer.packingslip>
                 <printer.enabled>true</printer.enabled>
                 <printer.charset>8859_4</printer.charset>
             </properties>
